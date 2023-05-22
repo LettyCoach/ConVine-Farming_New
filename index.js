@@ -126,13 +126,10 @@ async function main(req) {
 
 exports.handler = async (event) => {
 
-    console.log("Service Core Partaking Farming");
-    console.log(`${ENV} - ${REGION}`);
+    console.log("Service Core Partak Farming");
+    //console.log(`${ENV} - ${REGION}`);
     console.log(event);
-    console.log('path', __dirname)
-    //console.log(JSON.stringify(event));
     request_data = event;
-    console.log("request_data", request_data.pair);
     const platform_response = await main(request_data);
     return platform_response;
 };
