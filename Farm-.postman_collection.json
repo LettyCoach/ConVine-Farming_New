@@ -1,0 +1,1659 @@
+{
+	"info": {
+		"_postman_id": "91bc1399-97b4-4aa8-8062-d112f3986849",
+		"name": "Farm\\",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "testnetftmscan",
+			"item": [
+				{
+					"name": "GetStatus",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"platform\": \"testnetftmscan\",\r\n   \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"statusGet\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityAdd",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"platform\": \"testnetftmscan\",\r\n   \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"liquidityAdd\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"amount1\": \"1\",\r\n   \"amount2\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityRemove",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"platform\": \"testnetftmscan\",\r\n   \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"liquidityRemove\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"liquidity\": \"0.1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingDeposit",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"platform\": \"testnetftmscan\",\r\n   \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"farmingDeposit\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"liquidity\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingWithdraw",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"platform\": \"testnetftmscan\",\r\n   \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"farmingWithdraw\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"liquidity\": \"0.2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingHarvest",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"platform\": \"testnetftmscan\",\r\n   \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"farmingHarvest\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PancakeSwap",
+			"item": [
+				{
+					"name": "GetStatus",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"PancakeSwap\",\r\n  \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"statusGet\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"1\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityAdd",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"PancakeSwap\",\r\n  \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"liquidityAdd\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"amount1\": \"1\",\r\n   \"amount2\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityRemove",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"PancakeSwap\",\r\n  \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"liquidityRemove\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"liquidity\": \"0.1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingDeposit",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"PancakeSwap\",\r\n  \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"farmingDeposit\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"liquidity\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingWithdraw",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"PancakeSwap\",\r\n  \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"farmingWithdraw\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"liquidity\": \"0.2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingHarvest",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"PancakeSwap\",\r\n  \"pair\": \"CAKE-USDT\",\r\n  \"method\": \"farmingHarvest\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sushiswap",
+			"item": [
+				{
+					"name": "GetStatus",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"SushiSwap\",\r\n  \"pair\": \"ETH-USDT\",\r\n  \"method\": \"statusGet\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"1\"\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityAdd",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"platform\": \"SushiSwap\",\r\n  \"pair\": \"ETH-USDT\",\r\n  \"method\": \"liquidityAdd\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"amount1\": \"1\",\r\n   \"amount2\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityRemove",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"platform\": \"SushiSwap\",\r\n  \"pair\": \"ETH-USDT\",\r\n  \"method\": \"liquidityRemove\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"liquidity\": \"0.1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingDeposit",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"SushiSwap\",\r\n  \"pair\": \"ETH-USDT\",\r\n  \"method\": \"farmingDeposit\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"liquidity\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingWithdraw",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"SushiSwap\",\r\n  \"pair\": \"ETH-USDT\",\r\n  \"method\": \"farmingWithdraw\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"liquidity\": \"0.2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingHarvest",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"SushiSwap\",\r\n  \"pair\": \"ETH-USDT\",\r\n  \"method\": \"farmingHarvest\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SpookySwap",
+			"item": [
+				{
+					"name": "GetStatus(Sushiswap)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"SpookySwap\",\r\n  \"pair\": \"FTM-fUSDT\",\r\n  \"method\": \"statusGet\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"1\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityAdd",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"platform\": \"SpookySwap\",\r\n  \"pair\": \"FTM-USDC\",\r\n  \"method\": \"liquidityAdd\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"amount1\": \"1\",\r\n   \"amount2\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityRemove",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"platform\": \"SpookySwap\",\r\n  \"pair\": \"FTM-fUSDT\",\r\n  \"method\": \"liquidityRemove\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"liquidity\": \"0.1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingDeposit",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"SpookySwap\",\r\n  \"pair\": \"FTM-DAI\",\r\n  \"method\": \"farmingDeposit\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"liquidity\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingWithdraw",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"SpookySwap\",\r\n  \"pair\": \"FTM-DAI\",\r\n  \"method\": \"farmingWithdraw\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"liquidity\": \"0.2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingHarvest",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"SpookySwap\",\r\n  \"pair\": \"FTM-DAI\",\r\n  \"method\": \"farmingHarvest\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Beethonven",
+			"item": [
+				{
+					"name": "GetStatus(Sushiswap)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"Beethonven\",\r\n  \"pair\": \"FTM-USDC\",\r\n  \"method\": \"statusGet\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"1\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityAdd",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"Beethonven\",\r\n  \"pair\": \"FTM-USDC\",\r\n  \"method\": \"liquidityAdd\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"amount1\": \"1\",\r\n   \"amount2\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityRemove",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"Beethonven\",\r\n  \"pair\": \"FTM-USDC\",\r\n  \"method\": \"liquidityRemove\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"liquidity\": \"0.1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingDeposit",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"Beethonven\",\r\n  \"pair\": \"FTM-USDC\",\r\n  \"method\": \"farmingDeposit\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"liquidity\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingWithdraw",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"Beethonven\",\r\n  \"pair\": \"FTM-USDC\",\r\n  \"method\": \"farmingWithdraw\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"liquidity\": \"0.2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingHarvest",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"platform\": \"Beethonven\",\r\n  \"pair\": \"FTM-USDC\",\r\n  \"method\": \"farmingHarvest\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VectorFinance",
+			"item": [
+				{
+					"name": "GetStatus",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"VectorFinance\",\r\n  \"pair\": \"AVAX-VTX\",\r\n  \"method\": \"statusGet\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"1\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityAdd",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"platform\": \"Beethonven\",\r\n  \"pair\": \"FTM-USDC\",\r\n  \"method\": \"liquidityAdd\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"amount1\": \"1\",\r\n   \"amount2\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liquidityRemove",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"platform\": \"VectorFinance\",\r\n  \"pair\": \"AVAX-VTX\",\r\n  \"method\": \"liquidityRemove\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"liquidity\": \"0.1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingDeposit",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"platform\": \"VectorFinance\",\r\n  \"pair\": \"AVAX-VTX\",\r\n  \"method\": \"farmingDeposit\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"liquidity\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingWithdraw",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"platform\": \"VectorFinance\",\r\n  \"pair\": \"AVAX-VTX\",\r\n  \"method\": \"farmingWithdraw\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\",\r\n   \"address1\": \"\",\r\n   \"address2\": \"\",\r\n   \"liquidity\": \"0.2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "farmingHarvest",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "BCYBCJF-MC8M5XN-PGPHZ84-WFETEVH",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"platform\": \"VectorFinance\",\r\n  \"pair\": \"AVAX-VTX\",\r\n  \"method\": \"farmingHarvest\",\r\n  \"pool\": \"1\",\r\n  \"farm\": \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/operate_platform",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operate_platform"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
