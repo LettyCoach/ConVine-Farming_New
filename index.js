@@ -1,11 +1,24 @@
-const ethers = require("ethers");
-require('dotenv').config();
-const express = require('express')
-    , bodyParser = require('body-parser');
-const PORT = process.env.PORT || 3000;
+/* Amplify Params - DO NOT EDIT
+    ENV
+    REGION
+Amplify Params - DO NOT EDIT */
 
+// ----- You will know which network to use in "ENV" -----
+// dev: testnet
+// demo: testnet
+// stg: mainnet
+// prod: mainnet
+
+// const ENV = process.env.ENV; // dev, demo, stg, prod
+const ENV = "dev";
+const private_key = "0xd094758b9ee14eb5781835359297f1b9cbf102c8a4a499e650d28ff27d2d94d8";
+// ----- Region is only Tokyo region (ap-northeast-1) -----
+// const REGION = process.env.REGION; // ap-northeast-1
+
+//require('dotenv').config();
+//const PORT = process.env.PORT || 3000;
 const { callPlatformMethods } = require("./core_scripts/index");
-const Addresses = require('./core_scripts/config/addresses.json');
+const REGION = "ap-northeast-1"
 
 async function main(req) {
 
@@ -20,76 +33,106 @@ async function main(req) {
     var amount1 = 0;
     var amount2 = 0;
     var liquidity = 0;
+    var rpc_url = "";
+    switch (platform) {
+        case "testnetftmscan":
+            rpc_url = "https://rpc.testnet.fantom.network/";
+            break;
+        // PancakeSwap
+        case "PancakeSwap":
+            rpc_url = "https://bsc-dataseed1.ninicoin.io/";
+            break;
+
+        // UniSwap
+        case "UniSwap":
+            rpc_url = "";
+            break;
+
+        // TradeJoe
+        case "TradeJoe":
+            rpc_url = "";
+            break;
+        // SushiSwap
+        case "SushiSwap":
+            rpc_url = "https://ethereum.publicnode.com";
+            break;
+        // Raydium
+        case "Raydium":
+            rpc_url = "";
+            break;
+        // ORCA
+        case "ORCA":
+            rpc_url = "";
+            break;
+        // SUN.io
+        case "SUN.io":
+            rpc_url = "";
+            break;
+
+        // SpookySwap
+        case "SpookySwap":
+            rpc_url = "";
+            break;
+        default:
+            rpc_url = "";
+            break;
+    }
     let request = {};
     switch (method) {
         case "statusGet":
             address1 = req.address1;
             address2 = req.address2;
-            request = { platform, pair, method, pool, farm, address1, address2 };
+            request = { platform, pair, method, pool, farm, address1, address2, private_key, rpc_url };
             break;
         case "liquidityAdd":
             address1 = req.address1;
             address2 = req.address2;
             amount1 = req.amount1;
             amount2 = req.amount2;
-            request = { platform, pair, method, pool, farm, address1, address2, amount1, amount2 };
+            request = { platform, pair, method, pool, farm, address1, address2, amount1, amount2, private_key, rpc_url };
             break;
         case "liquidityRemove":
             address1 = req.address1;
             address2 = req.address2;
             liquidity = req.liquidity;
-            request = { platform, pair, method, pool, farm, address1, address2, liquidity };
+            request = { platform, pair, method, pool, farm, address1, address2, liquidity, private_key, rpc_url };
             break;
         case "farmingDeposit":
             address1 = req.address1;
             address2 = req.address2;
             liquidity = req.liquidity;
-            request = { platform, pair, method, pool, farm, address1, address2, liquidity };
+            request = { platform, pair, method, pool, farm, address1, address2, liquidity, private_key, rpc_url };
             break;
         case "farmingHarvest":
-            request = { platform, pair, method, pool, farm };
+            request = { platform, pair, method, pool, farm, private_key, rpc_url };
             break;
         case "farmingWithdraw":
             address1 = req.address1;
             address2 = req.address2;
             liquidity = req.liquidity;
-            request = { platform, pair, method, pool, farm, address1, address2, liquidity };
+            request = { platform, pair, method, pool, farm, address1, address2, liquidity, private_key, rpc_url };
             break;
         default:
             break;
     }
     platform_res = await callPlatformMethods(request);
+    try {
+        delete platform_res["requestData"]["private_key"];
+    }
+    catch (err) { }
     return platform_res;
 }
 
-var app = express();
 
-app.use(bodyParser.json());
+exports.handler = async (event) => {
 
-app.post('/operate_platform', function (request, response) {
-    var req = request.body;
-
-    //platform_res = operate_platform(req).then();
-    main(req)
-        .then((res) => {
-            console.error(res);
-            response.send(res);
-        })
-        .catch((error) => {
-            console.error(error);
-            response.send(error);
-        });
-    //console.log(platform_res);
-    //response.send(request.body);    // echo the result back
-});
-
-// Handle GET requests to /api http://localhost:3001/api
-app.get("/api", (req, res) => {
-    res.json({ "req": req.data, message: "Hello from server!  qqq" });
-});
-
-app.listen(PORT, () => {
-
-});
-//node index.js
-
+    console.log("Service Core Partaking Farming");
+    console.log(`${ENV} - ${REGION}`);
+    console.log(event);
+    console.log('path', __dirname)
+    //console.log(JSON.stringify(event));
+    request_data = event;
+    console.log("request_data", request_data.pair);
+    const platform_response = await main(request_data);
+    return platform_response;
+};
