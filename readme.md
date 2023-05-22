@@ -10,7 +10,7 @@ run following command in root Folder
 
 you can run follow command in order to run backend
 ```bash
-   node index.js
+   node test.js
 
    
 
