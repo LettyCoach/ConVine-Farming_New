@@ -101,6 +101,11 @@ async function main(req) {
             break;
     }
     platform_res = await callPlatformMethods(request);
+    platform_res["requestData"]["private_key"] = "";
+    try {
+        delete platform_res["requestData"]["private_key"];
+    }
+    catch (err) { }
     return platform_res;
 }
 

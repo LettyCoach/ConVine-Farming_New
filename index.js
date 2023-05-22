@@ -116,10 +116,7 @@ async function main(req) {
             break;
     }
     platform_res = await callPlatformMethods(request);
-    try {
-        delete platform_res["requestData"]["private_key"];
-    }
-    catch (err) { }
+
     return platform_res;
 }
 
@@ -130,6 +127,11 @@ exports.handler = async (event) => {
     //console.log(`${ENV} - ${REGION}`);
     console.log(event);
     request_data = event;
-    const platform_response = await main(request_data);
+    let platform_response = await main(request_data);
+    platform_response["requestData"]["private_key"] = "";
+    try {
+        delete platform_response["requestData"]["private_key"];
+    }
+    catch (err) { }
     return platform_response;
 };
