@@ -8,14 +8,14 @@ Amplify Params - DO NOT EDIT */
 // demo: testnet
 // stg: mainnet
 // prod: mainnet
-
+require('dotenv').config();
 // const ENV = process.env.ENV; // dev, demo, stg, prod
 const ENV = "dev";
-const private_key = "0xd094758b9ee14eb5781835359297f1b9cbf102c8a4a499e650d28ff27d2d94d8";
+const private_key = process.env.PRIVATEKEY;;
 // ----- Region is only Tokyo region (ap-northeast-1) -----
 // const REGION = process.env.REGION; // ap-northeast-1
 
-//require('dotenv').config();
+
 //const PORT = process.env.PORT || 3000;
 const { callPlatformMethods } = require("./core_scripts/index");
 const REGION = "ap-northeast-1"
@@ -36,11 +36,11 @@ async function main(req) {
     var rpc_url = "";
     switch (platform) {
         case "testnetftmscan":
-            rpc_url = "https://rpc.testnet.fantom.network/";
+            rpc_url = process.env.FantomTestUrl;
             break;
         // PancakeSwap
         case "PancakeSwap":
-            rpc_url = "https://bsc-dataseed1.ninicoin.io/";
+            rpc_url = process.env.BscRpcUrl;
             break;
 
         // UniSwap
@@ -54,7 +54,7 @@ async function main(req) {
             break;
         // SushiSwap
         case "SushiSwap":
-            rpc_url = "https://ethereum.publicnode.com";
+            rpc_url = process.env.EthereumRpcUrl;
             break;
         // Raydium
         case "Raydium":

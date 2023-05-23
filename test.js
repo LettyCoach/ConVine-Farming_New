@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express')
     , bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
-const private_key = "0xd094758b9ee14eb5781835359297f1b9cbf102c8a4a499e650d28ff27d2d94d8";
+const private_key = process.env.PRIVATEKEY;
 const { callPlatformMethods } = require("./core_scripts/index");
 async function main(req) {
 
@@ -21,11 +21,11 @@ async function main(req) {
     var rpc_url = "";
     switch (platform) {
         case "testnetftmscan":
-            rpc_url = "https://rpc.testnet.fantom.network/";
+            rpc_url = process.env.FantomTestUrl;
             break;
         // PancakeSwap
         case "PancakeSwap":
-            rpc_url = "https://bsc-dataseed1.ninicoin.io/";
+            rpc_url = process.env.BscRpcUrl;
             break;
 
         // UniSwap
@@ -39,7 +39,7 @@ async function main(req) {
             break;
         // SushiSwap
         case "SushiSwap":
-            rpc_url = "https://ethereum.publicnode.com";
+            rpc_url = process.env.EthereumRpcUrl;
             break;
         // Raydium
         case "Raydium":

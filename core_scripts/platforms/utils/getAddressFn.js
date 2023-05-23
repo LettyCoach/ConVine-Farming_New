@@ -1,4 +1,6 @@
 const Addresses = require('../../config/addresses.json');
+var fs = require('fs');
+const readline = require('readline');
 // testnet.ftmscan
 exports.TestnetFtmscanGetpIdFromPairName = function (pair) {
     var pid = 0;
@@ -190,3 +192,59 @@ exports.SushiswapGetAddressFromPairName = function (pair) {
     res = { addr1, addr2 };
     return res;
 };
+
+exports.writeLPInformation = function (path, res) {
+    try {
+        fs.writeFileSync(path, "");
+        fs.appendFileSync(path, "liquidity:" + res["liquidity"] + "\n");
+        fs.appendFileSync(path, "volume:" + res["volume"] + "\n");
+        fs.appendFileSync(path, "liquidity_value:" + res["liquidity_value"] + "\n");
+
+        fs.appendFileSync(path, "deposit_value:" + res["deposit_value"] + "\n");
+        fs.appendFileSync(path, "reward_value:" + res["reward_value"] + "\n");
+        fs.appendFileSync(path, "APR:" + res["APR"] + "\n");
+        fs.appendFileSync(path, "LTV:" + res["LTV"] + "\n");
+    }
+    catch (err) {
+
+    }
+
+}
+exports.readLPInformation = async (path) => {
+    var result = {
+        liquidity: "0", // pool liquidity
+        volume: "0", // pool volume
+        liquidity_value: "0", // my liquidity value
+        APR: "0", // pool liquidity
+        LTV: "0", // volume 
+        deposit_value: "0", // my deposit value
+        reward_value: "0" // my reward value
+    }
+
+    try {
+        const fileStream = fs.createReadStream(path);
+        const rl = readline.createInterface({
+            input: fileStream,
+            crlfDelay: Infinity
+        });
+        // Note: we use the crlfDelay option to recognize all instances of CR LF
+        // ('\r\n') in input.txt as a single line break.
+
+        for await (const line of rl) {
+            // Each line in input.txt will be successively available here as `line`.
+            try {
+                var strlist = line.split(":");
+                var val = strlist[1];
+                if (val.trim() == "") val = 0;
+                result[strlist[0]] = val;
+            }
+            catch (err) { }
+        }
+    }
+    catch (err) {
+
+    }
+    //console.log(result);
+    return result;
+
+}
