@@ -60,7 +60,14 @@ exports.call_testnetftmscan = async (req) => {
 // PancakeSwap
 exports.call_PancakeSwap = async (req) => {
   console.log("calling PancakeSwap Methods");
-  const { platform, pair, method, pool, farm } = req;
+  const { platform, pair, method, pool, farm, version } = req;
+  var path = "";
+  if (version == "V3") {
+    path = "./platforms/PancakeSwapV3";
+  }
+  else {
+    path = "./platforms/PancakeSwap";
+  }
   const {
     statusGet,
     liquidityAdd,
@@ -68,7 +75,7 @@ exports.call_PancakeSwap = async (req) => {
     farmingDeposit,
     farmingHarvest,
     farmingWithdraw
-  } = require("./platforms/PancakeSwap");
+  } = require(path);
   // initial data
   let method_data = {
     statusCode: null,
@@ -335,10 +342,17 @@ exports.call_SushiSwap = async (req) => {
 };
 
 // Sun.io
-exports.call_Sunio = async (req) => {
+exports.call_SUNio = async (req) => {
   console.log("calling Sun.io Methods");
   const { platform, pair, method, pool, farm } = req;
-
+  const {
+    statusGet,
+    liquidityAdd,
+    liquidityRemove,
+    farmingDeposit,
+    farmingHarvest,
+    farmingWithdraw
+  } = require("./platforms/SUNIo");
   // initial data
   let method_data = {
     statusCode: null,
@@ -348,40 +362,38 @@ exports.call_Sunio = async (req) => {
 
   switch (method) {
     case "statusGet":
-      // operate function here
-
-      // return
+      res = await statusGet(req);
+      method_data = res;
       break;
-
     case "liquidityAdd":
       // operate function here
-
-      // return
+      res = await liquidityAdd(req);
+      method_data = res;
       break;
 
     case "farmingDeposit":
       // operate function here
-
-      // return
+      res = await farmingDeposit(req);
+      method_data = res;
       break;
 
     case "farmingHarvest":
       // operate function here
-
-      // return
+      res = await farmingHarvest(req);
+      method_data = res;
       break;
 
     case "farmingWithdraw":
       // operate function here
-
-      // return
+      res = await farmingWithdraw(req);
+      method_data = res;
       break;
 
     case "liquidityRemove":
       // operate function here
-
-      // return
-      break;
+      res = await liquidityRemove(req);
+      method_data = res;
+      break
 
     default:
       break;
@@ -393,7 +405,14 @@ exports.call_Sunio = async (req) => {
 exports.call_TradeJoe = async (req) => {
   console.log("calling TradeJoe Methods");
   const { platform, pair, method, pool, farm } = req;
-
+  const {
+    statusGet,
+    liquidityAdd,
+    liquidityRemove,
+    farmingDeposit,
+    farmingHarvest,
+    farmingWithdraw
+  } = require("./platforms/TradeJoe");
   // initial data
   let method_data = {
     statusCode: null,
@@ -403,40 +422,38 @@ exports.call_TradeJoe = async (req) => {
 
   switch (method) {
     case "statusGet":
-      // operate function here
-
-      // return
+      res = await statusGet(req);
+      method_data = res;
       break;
-
     case "liquidityAdd":
       // operate function here
-
-      // return
+      res = await liquidityAdd(req);
+      method_data = res;
       break;
 
     case "farmingDeposit":
       // operate function here
-
-      // return
+      res = await farmingDeposit(req);
+      method_data = res;
       break;
 
     case "farmingHarvest":
       // operate function here
-
-      // return
+      res = await farmingHarvest(req);
+      method_data = res;
       break;
 
     case "farmingWithdraw":
       // operate function here
-
-      // return
+      res = await farmingWithdraw(req);
+      method_data = res;
       break;
 
     case "liquidityRemove":
       // operate function here
-
-      // return
-      break;
+      res = await liquidityRemove(req);
+      method_data = res;
+      break
 
     default:
       break;

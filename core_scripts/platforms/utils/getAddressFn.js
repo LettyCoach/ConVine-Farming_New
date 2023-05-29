@@ -45,26 +45,61 @@ exports.TestnetFtmscanGetAddressFromPairName = function (pair) {
     res = { addr1, addr2 };
     return res;
 };
-
 //========================= Pancakeswap======================
+exports.PancakeswapGetFeeFromPairName = function (pair) {
+    var fee = 0;
+    switch (pair) {
+        case "CAKE-USDT":
+        case "USDT-CAKE":
+            fee = 0.25;// %  pair address : 
+            break;
+        case "BNB-BUSD":
+        case "BUSD-BNB":
+            fee = 0.05; //pair address : 
+            break;
+        case "CAKE-BUSD":
+        case "BUSD-CAKE":
+            fee = 0.25; //pair address : 
+            break;
+        case "CAKE-BNB"://CAKE-WBNB
+        case "BNB-CAKE"://CAKE-WBNB
+            fee = 0.25;//pair address : 
+            break;
+        case "USDT-BNB"://CAKE-WBNB
+        case "BNB-USDT"://CAKE-WBNB
+            fee = 0.05;//pair address : 
+            break;
+        default:
+            break;
+    }
+    return fee;
+};
 exports.PancakeswapGetpIdFromPairName = function (pair) {
     var pid = 0;
     switch (pair) {
         case "CAKE-USDT":
         case "USDT-CAKE":
-            pid = 422;//pair address : 0xA39Af17CE4a8eb807E076805Da1e2B8EA7D0755b
+            pid = 3;//pair address : 0x7f51c8AaA6B0599aBd16674e2b17FEc7a9f674A1
             break;
         case "RACA-BUSD":
         case "BUSD-RACA":
-            pid = 507; //pair address : 0x8e744Ec2795c8B836689d1b4EBE1489204357dAC
+            pid = -1; //pair address : 
             break;
         case "CAKE-BUSD":
         case "BUSD-CAKE":
-            pid = 389; //pair address : 0x804678fa97d91B974ec2af3c843270886528a9E6
+            pid = -1; //pair address : 
             break;
         case "CAKE-BNB"://CAKE-WBNB
         case "BNB-CAKE"://CAKE-WBNB
-            pid = 251;//pair address : 0x0eD7e52944161450477ee417DE9Cd3a859b14fD0
+            pid = -1;//pair address : 
+            break;
+        case "USDT-BNB"://
+        case "BNB-USDT"://
+            pid = -1;//pair address : 
+            break;
+        case "BNB-BUSD":
+        case "BUSD-BNB":
+            pid = -1;//pair address : 
             break;
         default:
             break;
@@ -193,22 +228,212 @@ exports.SushiswapGetAddressFromPairName = function (pair) {
     return res;
 };
 
+
+//========================= SpookySwap======================
+exports.SpookySwapGetpIdFromPairName = function (pair) {
+    var pid = 0;
+    switch (pair) {
+        case "FTM-fUSDT":
+        case "fUSDT-FTM":
+            pid = 1;//pair address : 0x5965E53aa80a0bcF1CD6dbDd72e6A9b2AA047410
+            break;
+        case "FTM-USDC":
+        case "USDC-FTM":
+            pid = 2; //pair address : 0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c
+            break;
+        case "FTM-DAI":
+        case "DAI-FTM":
+            pid = 3; //pair address : 0xe120ffBDA0d14f3Bb6d6053E90E63c572A66a428
+            break;
+        case "FTM-DEUS"://
+        case "DEUS-FTM"://
+            pid = -1;//pair address : 0xaF918eF5b9f33231764A5557881E6D3e5277d456
+            break;
+
+        default:
+            break;
+    }
+    return pid;
+};
+exports.SpookySwapGetAddressFromPairName = function (pair) {
+    var addr1 = "";
+    var addr2 = "";
+    switch (pair) {
+        case "FTM-fUSDT":
+            addr1 = Addresses.SpookySwapWFTM;
+            addr2 = Addresses.SpookySwapFUsdt;
+            break;
+        case "fUSDT-FTM":
+            addr2 = Addresses.SpookySwapWFTM;
+            addr1 = Addresses.SpookySwapFUsdt;
+            break;
+        case "FTM-USDC":
+            addr1 = Addresses.SpookySwapWFTM;
+            addr2 = Addresses.SpookySwapUsdc;
+            break;
+        case "USDC-FTM":
+            addr2 = Addresses.SpookySwapWFTM;
+            addr1 = Addresses.SpookySwapUsdc;
+            break;
+        case "FTM-DAI":
+            addr1 = Addresses.SpookySwapWFTM;
+            addr2 = Addresses.SpookySwapDAI;
+            break;
+        case "DAI-FTM":
+            addr2 = Addresses.SpookySwapWFTM;
+            addr1 = Addresses.SpookySwapDAI;
+            break;
+        case "FTM-DEUS"://
+            addr1 = Addresses.SpookySwapWFTM;
+            addr2 = Addresses.SpookySwapDeus;
+            break;
+        case "DEUS-FTM"://
+            addr2 = Addresses.SpookySwapWFTM;
+            addr1 = Addresses.SpookySwapDeus;
+            break;
+        default:
+            break;
+    }
+    res = { addr1, addr2 };
+    return res;
+};
+
+//========================= TradeJoe======================
+exports.TradeJoeGetpIdFromPairName = function (pair) {
+    var pid = 0;
+    switch (pair) {
+        case "AVAX-USDT":
+        case "USDT-AVAX":
+            pid = 28;//pair address : 0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256
+            break;
+        case "AVAX-JOE":
+        case "JOE-AVAX":
+            pid = 0; //pair address : 0x454E67025631C065d3cFAD6d71E6892f74487a15
+            break;
+        case "BUSD-WAVAX":
+        case "WAVAX-BUSD":
+            pid = -1; //pair address : 
+            break;
+        case "AVAX-VTX"://
+        case "VTX-AVAX"://
+            pid = -1;//pair address : 0x9EF0C12b787F90F59cBBE0b611B82D30CAB92929
+            break;
+        case "AVAX-USDC"://
+        case "USDC-AVAX"://
+            pid = -1;//pair address : 0xf4003F4efBE8691B60249E6afbD307aBE7758adb
+            break;
+        default:
+            break;
+    }
+    return pid;
+};
+exports.TradeJoeGetAddressFromPairName = function (pair) {
+    var addr1 = "";
+    var addr2 = "";
+    switch (pair) {
+        case "BUSD-WAVAX":
+            addr1 = Addresses.TradeJoeBUSD;
+            addr2 = Addresses.TradeJoeWAvax;
+            break;
+        case "WAVAX-BUSD":
+            addr2 = Addresses.TradeJoeBUSD;
+            addr1 = Addresses.TradeJoeWAvax;
+            break;
+        case "AVAX-VTX":
+            addr1 = Addresses.TradeJoeAvax;
+            addr2 = Addresses.TradeJoeVTX;
+            break;
+        case "VTX-AVAX":
+            addr2 = Addresses.TradeJoeAvax;
+            addr1 = Addresses.TradeJoeVTX;
+            break;
+        case "AVAX-JOE":
+            addr1 = Addresses.TradeJoeAvax;
+            addr2 = Addresses.TradeJoeJoe;
+            break;
+        case "JOE-AVAX":
+            addr2 = Addresses.TradeJoeAvax;
+            addr1 = Addresses.TradeJoeJoe;
+            break;
+        case "AVAX-USDT":
+            addr1 = Addresses.TradeJoeAvax;
+            addr2 = Addresses.TradeJoeUsdt;
+            break;
+        case "USDT-AVAX":
+            addr2 = Addresses.TradeJoeAvax;
+            addr1 = Addresses.TradeJoeUsdt;
+            break;
+        case "AVAX-USDC":
+            addr1 = Addresses.TradeJoeAvax;
+            addr2 = Addresses.TradeJoeUsdc;
+            break;
+        case "USDC-AVAX":
+            addr2 = Addresses.TradeJoeAvax;
+            addr1 = Addresses.TradeJoeUsdc;
+            break;
+        default:
+            break;
+    }
+    res = { addr1, addr2 };
+    return res;
+};
+
+//========================= SUN.io======================
+exports.SUNIoGetpIdFromPairName = function (pair) {
+    var pid = 0;
+    switch (pair) {
+        case "USDD-TRX":
+        case "TRX-USDD":
+            pid = -1;//pair address : 
+            break;
+        case "USDD-USDT":
+        case "USDT-USDD":
+            pid = -1; //pair address : 
+            break;
+
+        default:
+            break;
+    }
+    return pid;
+};
+exports.SUNIoGetAddressFromPairName = function (pair) {
+    var addr1 = "";
+    var addr2 = "";
+    switch (pair) {
+        case "USDD-TRX":
+            addr1 = Addresses.SUNIoUsdd;
+            addr2 = Addresses.SUNIoTrx;
+            break;
+        case "TRX-USDD":
+            addr2 = Addresses.SUNIoUsdd;
+            addr1 = Addresses.SUNIoTrx;
+            break;
+        case "USDD-USDT":
+            addr1 = Addresses.SUNIoUsdd;
+            addr2 = Addresses.SUNIoUsdt;
+            break;
+        case "USDT-USDD":
+            addr2 = Addresses.SUNIoUsdd;
+            addr1 = Addresses.SUNIoUsdt;
+            break;
+        default:
+            break;
+    }
+    res = { addr1, addr2 };
+    return res;
+};
+
+//============================================================================
 exports.writeLPInformation = function (path, res) {
-    try {
-        fs.writeFileSync(path, "");
-        fs.appendFileSync(path, "liquidity:" + res["liquidity"] + "\n");
-        fs.appendFileSync(path, "volume:" + res["volume"] + "\n");
-        fs.appendFileSync(path, "liquidity_value:" + res["liquidity_value"] + "\n");
+    fs.writeFileSync(path, "");
+    fs.appendFileSync(path, "liquidity:" + res["liquidity"] + "\n");
+    fs.appendFileSync(path, "volume:" + res["volume"] + "\n");
+    fs.appendFileSync(path, "liquidity_value:" + res["liquidity_value"] + "\n");
 
-        fs.appendFileSync(path, "deposit_value:" + res["deposit_value"] + "\n");
-        fs.appendFileSync(path, "reward_value:" + res["reward_value"] + "\n");
-        fs.appendFileSync(path, "APR:" + res["APR"] + "\n");
-        fs.appendFileSync(path, "LTV:" + res["LTV"] + "\n");
-    }
-    catch (err) {
-
-    }
-
+    fs.appendFileSync(path, "deposit_value:" + res["deposit_value"] + "\n");
+    fs.appendFileSync(path, "reward_value:" + res["reward_value"] + "\n");
+    fs.appendFileSync(path, "APR:" + res["APR"] + "\n");
+    fs.appendFileSync(path, "LTV:" + res["LTV"] + "\n");
 }
 exports.readLPInformation = async (path) => {
     var result = {
