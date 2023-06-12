@@ -21,9 +21,6 @@ const { callPlatformMethods } = require("./core_scripts/index");
 const REGION = "ap-northeast-1"
 
 async function main(req) {
-
-
-
     let platform_res = {
         statusCode: 200,
         requestData: req,
@@ -49,7 +46,8 @@ async function main(req) {
     var liquidity = 0;
     var rpc_url = "";
     var private_key = process.env.PRIVATEKEY;
-
+    var tickLower = req.tickLower;
+    var tickUpper = req.tickUpper;
     switch (platform) {
         case "testnetftmscan":
             rpc_url = process.env.FantomTestUrl;
@@ -63,13 +61,13 @@ async function main(req) {
 
         // UniSwap
         case "UniSwap":
-            rpc_url = "";
+            rpc_url = "https://arb1.croswap.com/rpc";
+            //https://arbiscan.io/address/0xfb1EA3760C69B7bE86422a4661f47796d52Ceb1B
             break;
 
         // TradeJoe
         case "TradeJoe":
             rpc_url = process.env.AvalancheRpcUrl;
-
             //https://snowtrace.io/address/0xfb1EA3760C69B7bE86422a4661f47796d52Ceb1B
             break;
         // SushiSwap
@@ -80,6 +78,7 @@ async function main(req) {
         // Raydium
         case "Raydium":
             rpc_url = "";
+            //https://solscan.io/account/
             break;
         // ORCA
         case "ORCA":
@@ -89,7 +88,7 @@ async function main(req) {
         case "SUN.io":
             rpc_url = process.env.TronscanRpcUrl;
             private_key = process.env.TronPRIVATEKEY;
-            //https://tronscan.org/#/address/TW9P7KrpNGW1fRfMBm4MxGpCZNuNYMZaJb
+            //https://tronscan.org/#/address/
             break;
 
         // SpookySwap
@@ -113,7 +112,7 @@ async function main(req) {
             address2 = req.address2;
             amount1 = req.amount1;
             amount2 = req.amount2;
-            request = { platform, pair, method, pool, farm, address1, address2, amount1, amount2, private_key, rpc_url, version, tokenId };
+            request = { platform, pair, method, pool, farm, address1, address2, amount1, amount2, private_key, rpc_url, version, tokenId,tickLower,tickUpper };
             break;
         case "liquidityRemove":
             address1 = req.address1;

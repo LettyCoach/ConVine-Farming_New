@@ -123,7 +123,72 @@ exports.call_PancakeSwap = async (req) => {
   }
   return method_data;
 };
+// UniSwap
+exports.call_UniSwap = async (req) => {
+  console.log("calling UniSwap Methods");
+  const { platform, pair, method, pool, farm, version } = req;
+  var path = "";
+  if (version == "V3") {
+    path = "./platforms/UniSwapV3";
+  }
+  else {
+    path = "./platforms/UniSwapV3";
+  }
+  const {
+    statusGet,
+    liquidityAdd,
+    liquidityRemove,
+    farmingDeposit,
+    farmingHarvest,
+    farmingWithdraw
+  } = require(path);
+  // initial data
+  let method_data = {
+    statusCode: null,
+    requestData: req,
+    responseData: null
+  }
 
+  switch (method) {
+    case "statusGet":
+      res = await statusGet(req);
+      method_data = res;
+      break;
+    case "liquidityAdd":
+      // operate function here
+      res = await liquidityAdd(req);
+      method_data = res;
+      break;
+
+    case "farmingDeposit":
+      // operate function here
+      res = await farmingDeposit(req);
+      method_data = res;
+      break;
+
+    case "farmingHarvest":
+      // operate function here
+      res = await farmingHarvest(req);
+      method_data = res;
+      break;
+
+    case "farmingWithdraw":
+      // operate function here
+      res = await farmingWithdraw(req);
+      method_data = res;
+      break;
+
+    case "liquidityRemove":
+      // operate function here
+      res = await liquidityRemove(req);
+      method_data = res;
+      break
+
+    default:
+      break;
+  }
+  return method_data;
+};
 // BiSwap
 exports.call_BiSwap = async (req) => {
   console.log("calling BiSwap Methods");
@@ -404,7 +469,14 @@ exports.call_SUNio = async (req) => {
 // TradeJoe
 exports.call_TradeJoe = async (req) => {
   console.log("calling TradeJoe Methods");
-  const { platform, pair, method, pool, farm } = req;
+  const { platform, pair, method, pool, farm, version } = req;
+  var path = "";
+  if (version == "V2.1") {
+    path = "./platforms/TradeJoeV2.1";
+  }
+  else {
+    path = "./platforms/TradeJoe";
+  }
   const {
     statusGet,
     liquidityAdd,
@@ -412,7 +484,7 @@ exports.call_TradeJoe = async (req) => {
     farmingDeposit,
     farmingHarvest,
     farmingWithdraw
-  } = require("./platforms/TradeJoe");
+  } = require(path);
   // initial data
   let method_data = {
     statusCode: null,

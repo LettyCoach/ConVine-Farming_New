@@ -80,5 +80,10 @@ exports.callPlatformMethods = async (request_data) => {
       new Error("Not Platform Select!")
       break;
   }
+  try {
+    delete platform_response["requestData"]["private_key"];
+  }
+  catch (err) { }
+
   return platform_response;
 }

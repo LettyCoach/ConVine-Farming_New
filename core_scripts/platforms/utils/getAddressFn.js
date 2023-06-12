@@ -148,6 +148,82 @@ exports.PancakeswapGetAddressFromPairName = function (pair) {
     res = { addr1, addr2 };
     return res;
 };
+//========================= UniSwap======================
+exports.UniSwapGetFeeFromPairName = function (pair) {
+    var fee = 0;
+    switch (pair) {
+        case "ETH-USDT":
+        case "USDT-ETH":
+            fee = 0.05;// %  pair address : 
+            break;
+        case "ETH-USDC":
+        case "USDC-ETH":
+            fee = 0.05; //pair address : 
+            break;
+        case "ETH-ARB":
+        case "ARB-ETH":
+            fee = 0.05; //pair address : 
+            break;
+        default:
+            break;
+    }
+    return fee;
+};
+exports.UniSwapGetpIdFromPairName = function (pair) {
+    var pid = 0;
+    switch (pair) {
+        case "ETH-USDT":
+        case "USDT-ETH":
+            pid = -1;//pair address : 
+            break;
+        case "ETH-USDC":
+        case "USDC-ETH":
+            pid = -1; //pair address : 
+            break;
+        case "ETH-ARB":
+        case "ARB-ETH":
+            pid = -1; //pair address : 
+            break;
+        default:
+            break;
+    }
+    return pid;
+};
+exports.UniSwapGetAddressFromPairName = function (pair) {
+    var addr1 = "";
+    var addr2 = "";
+    switch (pair) {
+        case "ETH-USDT":
+            addr1 = Addresses.UniSwapWETH;
+            addr2 = Addresses.UniSwapUsdt;
+            break;
+        case "USDT-ETH":
+            addr2 = Addresses.UniSwapWETH;
+            addr1 = Addresses.UniSwapUsdt;
+            break;
+        case "ETH-USDC":
+            addr1 = Addresses.UniSwapWETH;
+            addr2 = Addresses.UniSwapUsdc;
+            break;
+        case "USDC-ETH":
+            addr2 = Addresses.UniSwapWETH;
+            addr1 = Addresses.UniSwapUsdc;
+            break;
+        case "ETH-ARB":
+            addr1 = Addresses.UniSwapWETH;
+            addr2 = Addresses.UniSwapARB;
+            break;
+        case "ARB-ETH":
+            addr2 = Addresses.UniSwapWETH;
+            addr1 = Addresses.UniSwapARB;
+            break;
+
+        default:
+            break;
+    }
+    res = { addr1, addr2 };
+    return res;
+};
 //========================= Sushiswap======================
 exports.SushiswapGetpIdFromPairName = function (pair) {
     var pid = 0;
@@ -300,15 +376,16 @@ exports.SpookySwapGetAddressFromPairName = function (pair) {
 
 //========================= TradeJoe======================
 exports.TradeJoeGetpIdFromPairName = function (pair) {
+    //return active id
     var pid = 0;
     switch (pair) {
         case "AVAX-USDT":
         case "USDT-AVAX":
-            pid = 28;//pair address : 0xeD8CBD9F0cE3C6986b22002F03c6475CEb7a6256
+            pid = 8345702;//pair address : 
             break;
         case "AVAX-JOE":
         case "JOE-AVAX":
-            pid = 0; //pair address : 0x454E67025631C065d3cFAD6d71E6892f74487a15
+            pid = -1; //pair address : 
             break;
         case "BUSD-WAVAX":
         case "WAVAX-BUSD":
@@ -316,16 +393,48 @@ exports.TradeJoeGetpIdFromPairName = function (pair) {
             break;
         case "AVAX-VTX"://
         case "VTX-AVAX"://
-            pid = -1;//pair address : 0x9EF0C12b787F90F59cBBE0b611B82D30CAB92929
+            pid = -1;//pair address : 
             break;
         case "AVAX-USDC"://
         case "USDC-AVAX"://
-            pid = -1;//pair address : 0xf4003F4efBE8691B60249E6afbD307aBE7758adb
+            pid = -1;//pair address : 
             break;
         default:
             break;
     }
     return pid;
+};
+exports.TradeJoeGetFeeFromPairName = function (pair) {
+    var fee = 0;
+    switch (pair) {
+        case "AVAX-USDT":
+        case "USDT-AVAX":
+            fee = 0.2;//pair address :20, 0xdF3E481a05F58c387Af16867e9F5dB7f931113c9
+            break;
+        case "AVAX-JOE":
+        case "JOE-AVAX":
+            pid = 0.15; //pair address :15, 0xc01961EdE437Bf0cC41D064B1a3F6F0ea6aa2a40
+            break;
+        case "WETH-AVAX":
+        case "AVAX-WETH":
+            pid = 0.1; //pair address : 10, 0x42Be75636374dfA0e57EB96fA7F68fE7FcdAD8a3
+            break;
+        case "JOE-USDC"://
+        case "USDC-JOE"://
+            pid = 0.25;//pair address : 25,0xf1f4CE5Dd70D4384F9B764020f26E8CABEE39070
+            break;
+        case "AVAX-USDC"://
+        case "USDC-AVAX"://
+            pid = 0.2;//pair address : 20,0xB5352A39C11a81FE6748993D586EC448A01f08b5
+            break;
+        case "AVAX-BTC"://
+        case "BTC-AVAX"://
+            pid = 0.1;//pair address : 10,0xcCa0cfFBF97fB10B08c1703f1DDdcF7b48c69d69
+            break;
+        default:
+            break;
+    }
+    return fee;
 };
 exports.TradeJoeGetAddressFromPairName = function (pair) {
     var addr1 = "";
@@ -370,6 +479,30 @@ exports.TradeJoeGetAddressFromPairName = function (pair) {
         case "USDC-AVAX":
             addr2 = Addresses.TradeJoeAvax;
             addr1 = Addresses.TradeJoeUsdc;
+            break;
+        case "JOE-USDC":
+            addr1 = Addresses.TradeJoeJoe;
+            addr2 = Addresses.TradeJoeUsdc;
+            break;
+        case "USDC-JOE":
+            addr2 = Addresses.TradeJoeJoe;
+            addr1 = Addresses.TradeJoeUsdc;
+            break;
+        case "WETH-AVAX":
+            addr1 = Addresses.TradeJoeWETH;
+            addr2 = Addresses.TradeJoeAvax;
+            break;
+        case "AVAX-WETH":
+            addr2 = Addresses.TradeJoeWETH;
+            addr1 = Addresses.TradeJoeAvax;
+            break;
+        case "BTC-AVAX":
+            addr1 = Addresses.TradeJoeWBTC;
+            addr2 = Addresses.TradeJoeAvax;
+            break;
+        case "AVAX-BTC":
+            addr2 = Addresses.TradeJoeWBTC;
+            addr1 = Addresses.TradeJoeAvax;
             break;
         default:
             break;
