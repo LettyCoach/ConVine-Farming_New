@@ -471,11 +471,17 @@ exports.call_TradeJoe = async (req) => {
   console.log("calling TradeJoe Methods");
   const { platform, pair, method, pool, farm, version } = req;
   var path = "";
+   // initial data
+  let method_data = {
+    statusCode: 400,
+    requestData: req,
+    responseData: null
+  }
   if (version == "V2.1") {
     path = "./platforms/TradeJoeV2.1";
   }
   else {
-    path = "./platforms/TradeJoe";
+    return method_data;//path = "./platforms/TradeJoe";
   }
   const {
     statusGet,
@@ -485,12 +491,7 @@ exports.call_TradeJoe = async (req) => {
     farmingHarvest,
     farmingWithdraw
   } = require(path);
-  // initial data
-  let method_data = {
-    statusCode: null,
-    requestData: req,
-    responseData: null
-  }
+ 
 
   switch (method) {
     case "statusGet":

@@ -381,23 +381,27 @@ exports.TradeJoeGetpIdFromPairName = function (pair) {
     switch (pair) {
         case "AVAX-USDT":
         case "USDT-AVAX":
-            pid = 8345702;//pair address : 
+            pid = 8376015;//pair address : 0x87EB2F90d7D0034571f343fb7429AE22C1Bd9F72
             break;
         case "AVAX-JOE":
         case "JOE-AVAX":
-            pid = -1; //pair address : 
+            pid = 8386218; //pair address : 0x9f8973FB86b35C307324eC31fd81Cf565E2F4a63
             break;
-        case "BUSD-WAVAX":
-        case "WAVAX-BUSD":
-            pid = -1; //pair address : 
-            break;
-        case "AVAX-VTX"://
-        case "VTX-AVAX"://
-            pid = -1;//pair address : 
+        case "AVAX-BTC"://
+        case "BTC-AVAX"://
+            pid = 8419346 ;//pair address : 10,0xD9fa522F5BC6cfa40211944F2C8DA785773Ad99D
             break;
         case "AVAX-USDC"://
         case "USDC-AVAX"://
-            pid = -1;//pair address : 
+            pid = 8376013 ;//pair address : 0xD446eb1660F766d533BeCeEf890Df7A69d26f7d1
+            break;
+        case "WETH-AVAX":
+        case "AVAX-WETH":
+            pid = 8393523; //pair address : 10, 0x1901011a39B11271578a1283D620373aBeD66faA
+            break;
+         case "JOE-USDC"://
+        case "USDC-JOE"://
+            pid = 8377094;//pair address : 25,0x9A0A97D8005d9f783A054aa5CD8878bB0CCF414D
             break;
         default:
             break;
@@ -409,27 +413,27 @@ exports.TradeJoeGetFeeFromPairName = function (pair) {
     switch (pair) {
         case "AVAX-USDT":
         case "USDT-AVAX":
-            fee = 0.2;//pair address :20, 0xdF3E481a05F58c387Af16867e9F5dB7f931113c9
+            fee = 0.2;//pair address :20, 
             break;
         case "AVAX-JOE":
         case "JOE-AVAX":
-            pid = 0.15; //pair address :15, 0xc01961EdE437Bf0cC41D064B1a3F6F0ea6aa2a40
+            fee = 0.15; //pair address :15, 
             break;
         case "WETH-AVAX":
         case "AVAX-WETH":
-            pid = 0.1; //pair address : 10, 0x42Be75636374dfA0e57EB96fA7F68fE7FcdAD8a3
+            fee = 0.1; //pair address : 10, 
             break;
         case "JOE-USDC"://
         case "USDC-JOE"://
-            pid = 0.25;//pair address : 25,0xf1f4CE5Dd70D4384F9B764020f26E8CABEE39070
+            fee = 0.25;//pair address : 25,
             break;
         case "AVAX-USDC"://
         case "USDC-AVAX"://
-            pid = 0.2;//pair address : 20,0xB5352A39C11a81FE6748993D586EC448A01f08b5
+            fee = 0.2;//pair address : 20,
             break;
         case "AVAX-BTC"://
         case "BTC-AVAX"://
-            pid = 0.1;//pair address : 10,0xcCa0cfFBF97fB10B08c1703f1DDdcF7b48c69d69
+            fee = 0.1;//pair address : 10,
             break;
         default:
             break;

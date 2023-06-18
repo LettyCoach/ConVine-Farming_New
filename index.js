@@ -48,6 +48,8 @@ async function main(req) {
     var private_key = process.env.PRIVATEKEY;
     var tickLower = req.tickLower;
     var tickUpper = req.tickUpper;
+    var RadiusNumberOfBins = req.RadiusNumberOfBins;
+    var activeId = req.activeId;
     switch (platform) {
         case "testnetftmscan":
             rpc_url = process.env.FantomTestUrl;
@@ -78,7 +80,7 @@ async function main(req) {
         // Raydium
         case "Raydium":
             rpc_url = "";
-            //https://solscan.io/account/
+            //https://solscan.io/account/FmpW4uaeZcLS6DYCgb6aXGjA9gr5TLLtBYwBBxeBpbNU
             break;
         // ORCA
         case "ORCA":
@@ -88,7 +90,7 @@ async function main(req) {
         case "SUN.io":
             rpc_url = process.env.TronscanRpcUrl;
             private_key = process.env.TronPRIVATEKEY;
-            //https://tronscan.org/#/address/
+            //https://tronscan.org/#/address/TW9P7KrpNGW1fRfMBm4MxGpCZNuNYMZaJb
             break;
 
         // SpookySwap
@@ -112,13 +114,13 @@ async function main(req) {
             address2 = req.address2;
             amount1 = req.amount1;
             amount2 = req.amount2;
-            request = { platform, pair, method, pool, farm, address1, address2, amount1, amount2, private_key, rpc_url, version, tokenId,tickLower,tickUpper };
+            request = { platform, pair, method, pool, farm, address1, address2, amount1, amount2, private_key, rpc_url, version, tokenId,tickLower,tickUpper,RadiusNumberOfBins };
             break;
         case "liquidityRemove":
             address1 = req.address1;
             address2 = req.address2;
             liquidity = req.liquidity;
-            request = { platform, pair, method, pool, farm, address1, address2, liquidity, private_key, rpc_url, version, tokenId };
+            request = { platform, pair, method, pool, farm, address1, address2, liquidity, private_key, rpc_url, version, tokenId ,RadiusNumberOfBins,activeId};
             break;
         case "farmingDeposit":
             address1 = req.address1;
@@ -150,7 +152,6 @@ async function main(req) {
 
 
 exports.handler = async (event) => {
-
     console.log("Service Core Partak Farming");
     //console.log(`${ENV} - ${REGION}`);
     console.log(event);

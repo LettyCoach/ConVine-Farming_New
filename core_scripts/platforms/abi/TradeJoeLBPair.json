@@ -1212,6 +1212,19 @@
         "type": "function"
     },
     {
+        "inputs": [],
+        "name": "getActiveId",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "activeId",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "inputs": [
             {
                 "internalType": "uint16",
@@ -1437,6 +1450,24 @@
             }
         ],
         "name": "setApprovalForAll",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_spender",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "_approved",
+                "type": "bool"
+            }
+        ],
+        "name": "approveForAll",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
