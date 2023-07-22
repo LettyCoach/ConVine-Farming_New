@@ -137,6 +137,7 @@ exports.PancakeswapGetAddressFromPairName = function (pair) {
         case "CAKE-BNB"://CAKE-WBNB
             addr1 = Addresses.PancakeSwapCake;
             addr2 = Addresses.PancakeSwapWBNB;
+
             break;
         case "BNB-CAKE"://CAKE-WBNB
             addr2 = Addresses.PancakeSwapCake;
@@ -559,7 +560,6 @@ exports.SUNIoGetAddressFromPairName = function (pair) {
     res = { addr1, addr2 };
     return res;
 };
-
 //============================================================================
 exports.writeLPInformation = function (path, res) {
     fs.writeFileSync(path, "");
