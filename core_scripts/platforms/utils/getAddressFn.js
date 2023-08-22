@@ -143,6 +143,22 @@ exports.PancakeswapGetAddressFromPairName = function (pair) {
             addr2 = Addresses.PancakeSwapCake;
             addr1 = Addresses.PancakeSwapWBNB;
             break;
+        case "BNB-USDT":
+            addr1 = Addresses.PancakeSwapWBNB;
+            addr2 = Addresses.PancakeSwapUsdt;
+            break;
+        case "USDT-BNB":
+            addr2 = Addresses.PancakeSwapWBNB;
+            addr1 = Addresses.PancakeSwapUsdt;
+            break;
+        case "BNB-BUSD":
+            addr1 = Addresses.PancakeSwapWBNB;
+            addr2 = Addresses.PancakeSwapBUSD;
+            break;
+        case "BUSD-BNB":
+            addr2 = Addresses.PancakeSwapWBNB;
+            addr1 = Addresses.PancakeSwapBUSD;
+            break;
         default:
             break;
     }
@@ -390,17 +406,17 @@ exports.TradeJoeGetpIdFromPairName = function (pair) {
             break;
         case "AVAX-BTC"://
         case "BTC-AVAX"://
-            pid = 8419346 ;//pair address : 10,0xD9fa522F5BC6cfa40211944F2C8DA785773Ad99D
+            pid = 8419346;//pair address : 10,0xD9fa522F5BC6cfa40211944F2C8DA785773Ad99D
             break;
         case "AVAX-USDC"://
         case "USDC-AVAX"://
-            pid = 8376013 ;//pair address : 0xD446eb1660F766d533BeCeEf890Df7A69d26f7d1
+            pid = 8376013;//pair address : 0xD446eb1660F766d533BeCeEf890Df7A69d26f7d1
             break;
         case "WETH-AVAX":
         case "AVAX-WETH":
             pid = 8393523; //pair address : 10, 0x1901011a39B11271578a1283D620373aBeD66faA
             break;
-         case "JOE-USDC"://
+        case "JOE-USDC"://
         case "USDC-JOE"://
             pid = 8377094;//pair address : 25,0x9A0A97D8005d9f783A054aa5CD8878bB0CCF414D
             break;
