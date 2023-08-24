@@ -48,7 +48,7 @@ async function main(req) {
 
         // UniSwap
         case "UniSwap":
-            rpc_url = "https://endpoints.omniatech.io/v1/arbitrum/one/public";
+            rpc_url = process.env.ArbitrumRpcUrl;
             //https://arbiscan.io/address/0xfb1EA3760C69B7bE86422a4661f47796d52Ceb1B
             break;
 

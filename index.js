@@ -63,7 +63,7 @@ async function main(req) {
 
         // UniSwap
         case "UniSwap":
-            rpc_url = "https://arb1.croswap.com/rpc";
+            rpc_url = process.env.ArbitrumRpcUrl;
             //https://arbiscan.io/address/0xfb1EA3760C69B7bE86422a4661f47796d52Ceb1B
             break;
 
@@ -114,13 +114,13 @@ async function main(req) {
             address2 = req.address2;
             amount1 = req.amount1;
             amount2 = req.amount2;
-            request = { platform, pair, method, pool, farm, address1, address2, amount1, amount2, private_key, rpc_url, version, tokenId,tickLower,tickUpper,RadiusNumberOfBins };
+            request = { platform, pair, method, pool, farm, address1, address2, amount1, amount2, private_key, rpc_url, version, tokenId, tickLower, tickUpper, RadiusNumberOfBins };
             break;
         case "liquidityRemove":
             address1 = req.address1;
             address2 = req.address2;
             liquidity = req.liquidity;
-            request = { platform, pair, method, pool, farm, address1, address2, liquidity, private_key, rpc_url, version, tokenId ,RadiusNumberOfBins,activeId};
+            request = { platform, pair, method, pool, farm, address1, address2, liquidity, private_key, rpc_url, version, tokenId, RadiusNumberOfBins, activeId };
             break;
         case "farmingDeposit":
             address1 = req.address1;
